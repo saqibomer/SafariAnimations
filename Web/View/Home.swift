@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct Home: View {
+    
+    //Color Scheme
+    @Environment(\.colorScheme) var scheme
+    
     var body: some View {
         ZStack {
             //bg
@@ -20,8 +24,62 @@ struct Home: View {
                     .frame(width: size.width, height: size.height)
                     .cornerRadius(0)
             }
+            .overlay((scheme == .dark ? Color.black : Color.white).opacity(0.35))
             .overlay(.ultraThinMaterial)
             .ignoresSafeArea()
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                //Lazy Grid
+                let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+                
+                LazyVGrid(columns: columns,spacing: 15) {
+                    
+                }
+                
+            }
+            .safeAreaInset(edge: .bottom) {
+                
+                HStack {
+                    
+                    Button {
+                         
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title2)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label : {
+                        Text("Done")
+                            .fontWeight(.semibold)
+                    }
+                }
+                
+                .overlay(
+                    Button(action: {
+                        
+                    }, label: {
+                        HStack(spacing: 4) {
+                            Text("Private")
+                                .fontWeight(.semibold)
+                            
+                            Image(systemName: "chevron.down")
+                        }
+                        .foregroundColor(.primary)
+                    })
+                )
+                
+                .padding([.horizontal,.top])
+                .padding(.bottom, 10)
+                .background(
+                    scheme == .dark ? Color.black : Color.white
+                )
+            }
+            
         }
     }
 }
@@ -29,5 +87,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+            .preferredColorScheme(.dark)
     }
 }
