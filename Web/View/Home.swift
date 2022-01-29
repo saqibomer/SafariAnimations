@@ -20,6 +20,7 @@ struct Home: View {
                     .frame(width: size.width, height: size.height)
                     .cornerRadius(0)
             }
+            .overlay(.ultraThinMaterial)
             .ignoresSafeArea()
         }
     }
