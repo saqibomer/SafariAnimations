@@ -11,17 +11,43 @@ import WebKit
 struct WebView: UIViewRepresentable {
     
     var tab: Tab
+    //returning Webpage Title
+    var onComplete: (String)->()
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(parent: self)
+    }
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         let url = URL(string: tab.tabURL)!
         
         webView.load(URLRequest(url: url))
+        webView.navigationDelegate = context.coordinator
         
         return webView
     }
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        <#code#>
+        // Scaling view to fit the Size
+        // you can update this with any state values
+        //removing padding and spacing
+        let actualWidth = (getRect().width - 60)
+        let cardWidth = actualWidth / 2
+         
+        let scale = cardWidth / actualWidth
+        
+        uiView.transform = CGAffineTransform(scaleX: scale, y: scale)
+    }
+    class Coordinator: NSObject, WKNavigationDelegate {
+        
+        var parent: WebView
+        init(parent: WebView) {
+            self.parent = parent
+        }
+        
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            let title = webView.title ?? ""
+            parent.onComplete(title.components(separatedBy: "").first ?? "")
+        }
     }
 }
 

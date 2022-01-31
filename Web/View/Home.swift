@@ -50,6 +50,7 @@ struct Home: View {
                     }
                     
                 }
+                .padding()
                 
             }
             .safeAreaInset(edge: .bottom) {
@@ -107,9 +108,50 @@ struct Home_Previews: PreviewProvider {
 struct TabCardView: View {
     var tab: Tab
     
+    //Tab Title
+    @State var tabTitle = ""
+    
+    //Gestures
+    @State var offset: CGFloat = 0
+    @GestureState var isDragging: Bool = false
+    
+    
     var body: some View {
         VStack(spacing: 10) {
             // WebView
+            WebView(tab: tab) { title in
+                self.tabTitle = title
+            }
+                .frame(height: 250)
+                .cornerRadius(15)
+            Text(tabTitle)
+                .fontWeight(.bold)
+                .lineLimit(1)
         }
+        .contentShape(Rectangle())
+        .offset(x: offset)
+        .gesture(
+            DragGesture()
+                .updating($isDragging, body: { _, out, _ in
+                    out = true
+                })
+                .onChanged({ value in
+                    let translation = value.translation.width
+                    offset = translation > 0 ? translation / 10 : translation
+                })
+                .onEnded({ value in
+                    withAnimation{
+                        offset = 0
+                    }
+                    
+                })
+        )
+    }
+}
+
+// Extension WebView to get Screen Bounds
+extension View {
+    func getRect()-> CGRect {
+        return UIScreen.main.bounds
     }
 }
