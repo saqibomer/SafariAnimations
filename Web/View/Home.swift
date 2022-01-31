@@ -12,6 +12,12 @@ struct Home: View {
     //Color Scheme
     @Environment(\.colorScheme) var scheme
     
+    // Sample Tabs
+    @State var tabs: [Tab] = [
+        .init(tabURL: "https://www.youtube.com/watch?v=qWO7PJ5Icwg"),
+            .init(tabURL: "https://www.apple.com"),
+    ]
+    
     var body: some View {
         ZStack {
             //bg
@@ -34,6 +40,12 @@ struct Home: View {
                 let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
                 
                 LazyVGrid(columns: columns,spacing: 15) {
+                    
+                    //Tabs
+                    ForEach(tabs) { tab in
+                        
+                        // Tab Card View
+                    }
                     
                 }
                 
