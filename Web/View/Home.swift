@@ -45,6 +45,8 @@ struct Home: View {
                     ForEach(tabs) { tab in
                         
                         // Tab Card View
+                        TabCardView(tab: tab)
+                        
                     }
                     
                 }
@@ -100,5 +102,14 @@ struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
             .preferredColorScheme(.dark)
+    }
+}
+struct TabCardView: View {
+    var tab: Tab
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            // WebView
+        }
     }
 }

@@ -15,6 +15,7 @@
 		686B43F527A5AA59003FFB4F /* Web.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 686B43F327A5AA59003FFB4F /* Web.xcdatamodeld */; };
 		686B43FE27A5AB30003FFB4F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B43FD27A5AB30003FFB4F /* Home.swift */; };
 		686B440027A5B60F003FFB4F /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B43FF27A5B60F003FFB4F /* Tab.swift */; };
+		68E24CD327A7C05C00DFCAE2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E24CD227A7C05C00DFCAE2 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		686B43F427A5AA59003FFB4F /* Web.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Web.xcdatamodel; sourceTree = "<group>"; };
 		686B43FD27A5AB30003FFB4F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		686B43FF27A5B60F003FFB4F /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		68E24CD227A7C05C00DFCAE2 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				686B43FD27A5AB30003FFB4F /* Home.swift */,
+				68E24CD227A7C05C00DFCAE2 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				686B440027A5B60F003FFB4F /* Tab.swift in Sources */,
 				686B43F527A5AA59003FFB4F /* Web.xcdatamodeld in Sources */,
 				686B43E927A5AA57003FFB4F /* WebApp.swift in Sources */,
+				68E24CD327A7C05C00DFCAE2 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
