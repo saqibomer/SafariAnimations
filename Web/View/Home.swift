@@ -11,12 +11,15 @@ struct Home: View {
     
     //Color Scheme
     @Environment(\.colorScheme) var scheme
+    @Environment(\.presentationMode) var presentationMode
     
     // Sample Tabs
-    @State var tabs: [Tab] = [
-        .init(tabURL: "https://www.youtube.com/watch?v=qWO7PJ5Icwg"),
-            .init(tabURL: "https://www.apple.com"),
-    ]
+    @State var tabs: [Tab]
+    
+    
+        
+    var onAddNewTab: ((Bool) -> Void)?
+    
     
     var body: some View {
         ZStack {
@@ -44,6 +47,7 @@ struct Home: View {
                     //Tabs
                     ForEach(tabs) { tab in
                         
+                        
                         // Tab Card View
                         TabCardView(tab: tab, tabs: $tabs)
                         
@@ -58,6 +62,11 @@ struct Home: View {
                 HStack {
                     
                     Button {
+                        withAnimation{
+                            onAddNewTab?(false)
+                            presentationMode.wrappedValue.dismiss()
+//                            tabs.append(Tab(tabURL: urls.randomElement() ?? ""))
+                        }
                          
                     } label: {
                         Image(systemName: "plus")
@@ -68,6 +77,7 @@ struct Home: View {
                     
                     Button {
                         
+                        presentationMode.wrappedValue.dismiss()
                     } label : {
                         Text("Done")
                             .fontWeight(.semibold)
@@ -93,18 +103,22 @@ struct Home: View {
                 .background(
                     scheme == .dark ? Color.black : Color.white
                 )
+            }.onAppear {
+                print(tabs.first?.tabURL)
             }
             
         }
+        
+        
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct Home_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Home()
+//            .preferredColorScheme(.dark)
+//    }
+//}
 struct TabCardView: View {
     var tab: Tab
     
@@ -116,7 +130,7 @@ struct TabCardView: View {
     //Gestures
     @State var offset: CGFloat = 0
     @GestureState var isDragging: Bool = false
-    
+    @State var scale: CGFloat = 0
     
     var body: some View {
         VStack(spacing: 10) {
@@ -127,12 +141,27 @@ struct TabCardView: View {
                 .frame(height: 250)
                 .overlay(Color.primary.opacity(0.01))
                 .cornerRadius(15)
+                .overlay(
+                    Button(action: {
+                        withAnimation{
+                            offset = -(getRect().width + 200)
+                            removeTab()
+                        }
+                    }, label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.primary)
+                            .padding(10)
+                            .background(.ultraThinMaterial,in: Circle())
+                    })
+                        .padding(10),
+                    alignment: .topTrailing
+                )
             Text(tabTitle)
                 .fontWeight(.bold)
                 .lineLimit(1)
                 .frame(height: 50)
         }
-        .scaleEffect(getScale())
+        .scaleEffect(scale)
         .contentShape(Rectangle())
         .offset(x: offset)
         .gesture(
@@ -171,6 +200,7 @@ struct TabCardView: View {
                             
                             withAnimation{
                                 offset = -(getRect().width + 200)
+                                removeTab()
                             }
                             
                         }else {
@@ -183,15 +213,25 @@ struct TabCardView: View {
                     
                 })
         )
+        .onAppear {
+            let baseAnimation = Animation.spring()
+                        
+
+                        withAnimation(baseAnimation) {
+                            scale = 1.0
+                        }
+                    }
+        
+        
     }
     
-    func getScale()->CGFloat {
-        //Scaling little bit while dragging
-        let progress = (offset > 0 ? offset : -offset) / 50
-        
-        let scale = (progress < 1 ? progress : 1) * 0.08
-        return 1 + scale
-    }
+//    func getScale() {
+//        //Scaling little bit while dragging
+//        let progress = (offset > 0 ? offset : -offset) / 50
+//
+//        let scaleValue = (progress < 1 ? progress : 1) * 0.08
+//        scale = 1 + scaleValue
+//    }
     
     func getIndex()->Int {
         let index = tabs.firstIndex{ currentTab in
@@ -216,3 +256,13 @@ extension View {
         return UIScreen.main.bounds
     }
 }
+
+// Sample Urls
+var urls: [String] = [
+    "https://unsplash.com/s/photos/animation",
+    "https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html",
+    "https://www.google.com",
+    "https://www.youtube.com",
+    "https://www.gmail.com",
+    
+]

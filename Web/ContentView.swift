@@ -15,10 +15,12 @@ struct ContentView: View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
 //        animation: .default)
 //    private var items: FetchedResults<Item>
+    
+    @State var tabs : [Tab] = []
 
     var body: some View {
         
-        Home()
+        HomeContiner(tabs: $tabs)
         
 //        NavigationView {
 //            List {

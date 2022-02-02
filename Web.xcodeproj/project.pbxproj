@@ -16,6 +16,27 @@
 		686B43FE27A5AB30003FFB4F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B43FD27A5AB30003FFB4F /* Home.swift */; };
 		686B440027A5B60F003FFB4F /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B43FF27A5B60F003FFB4F /* Tab.swift */; };
 		68E24CD327A7C05C00DFCAE2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E24CD227A7C05C00DFCAE2 /* WebView.swift */; };
+		AA87348D27A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348727A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift */; };
+		AA87348E27A9AFBA00581F13 /* BrowserContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348827A9AFBA00581F13 /* BrowserContainerViewModel.swift */; };
+		AA87348F27A9AFBA00581F13 /* BrowserContainerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348927A9AFBA00581F13 /* BrowserContainerContentView.swift */; };
+		AA87349027A9AFBA00581F13 /* BrowserContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348A27A9AFBA00581F13 /* BrowserContainerViewController.swift */; };
+		AA87349127A9AFBA00581F13 /* BrowserContainerViewController+AddressBarsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348B27A9AFBA00581F13 /* BrowserContainerViewController+AddressBarsAnimation.swift */; };
+		AA87349227A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348C27A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift */; };
+		AA87349727A9AFD300581F13 /* BrowserToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349427A9AFD300581F13 /* BrowserToolbar.swift */; };
+		AA87349827A9AFD300581F13 /* BrowserAddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349527A9AFD300581F13 /* BrowserAddressBar.swift */; };
+		AA87349927A9AFD300581F13 /* BrowserAddressBar+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349627A9AFD300581F13 /* BrowserAddressBar+TextField.swift */; };
+		AA87349F27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349B27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift */; };
+		AA8734A027A9B00600581F13 /* BrowserTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349C27A9B00600581F13 /* BrowserTabContentView.swift */; };
+		AA8734A127A9B00600581F13 /* BrowserTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349D27A9B00600581F13 /* BrowserTabViewController.swift */; };
+		AA8734A227A9B00600581F13 /* BrowserTabEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87349E27A9B00600581F13 /* BrowserTabEmptyStateView.swift */; };
+		AA8734A727A9B06300581F13 /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734A427A9B06300581F13 /* URLGenerator.swift */; };
+		AA8734A827A9B06300581F13 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734A527A9B06300581F13 /* KeyboardManager.swift */; };
+		AA8734A927A9B06300581F13 /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734A627A9B06300581F13 /* URLValidator.swift */; };
+		AA8734B627A9B1FF00581F13 /* NSNotification+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734B327A9B1FF00581F13 /* NSNotification+Helpers.swift */; };
+		AA8734B727A9B1FF00581F13 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734B427A9B1FF00581F13 /* UIColor+Helpers.swift */; };
+		AA8734B827A9B1FF00581F13 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734B527A9B1FF00581F13 /* Array+Helpers.swift */; };
+		AA8734BB27A9B2E900581F13 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA8734BA27A9B2E900581F13 /* SnapKit */; };
+		AA8734BD27A9B3F800581F13 /* HomeContiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734BC27A9B3F800581F13 /* HomeContiner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +50,26 @@
 		686B43FD27A5AB30003FFB4F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		686B43FF27A5B60F003FFB4F /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		68E24CD227A7C05C00DFCAE2 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		AA87348727A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserContainerViewController+ToolbarAnimation.swift"; sourceTree = "<group>"; };
+		AA87348827A9AFBA00581F13 /* BrowserContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserContainerViewModel.swift; sourceTree = "<group>"; };
+		AA87348927A9AFBA00581F13 /* BrowserContainerContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserContainerContentView.swift; sourceTree = "<group>"; };
+		AA87348A27A9AFBA00581F13 /* BrowserContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserContainerViewController.swift; sourceTree = "<group>"; };
+		AA87348B27A9AFBA00581F13 /* BrowserContainerViewController+AddressBarsAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserContainerViewController+AddressBarsAnimation.swift"; sourceTree = "<group>"; };
+		AA87348C27A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserContainerViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		AA87349427A9AFD300581F13 /* BrowserToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserToolbar.swift; sourceTree = "<group>"; };
+		AA87349527A9AFD300581F13 /* BrowserAddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserAddressBar.swift; sourceTree = "<group>"; };
+		AA87349627A9AFD300581F13 /* BrowserAddressBar+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserAddressBar+TextField.swift"; sourceTree = "<group>"; };
+		AA87349B27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserTabContentView+StatusBarBackgroundView.swift"; sourceTree = "<group>"; };
+		AA87349C27A9B00600581F13 /* BrowserTabContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserTabContentView.swift; sourceTree = "<group>"; };
+		AA87349D27A9B00600581F13 /* BrowserTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserTabViewController.swift; sourceTree = "<group>"; };
+		AA87349E27A9B00600581F13 /* BrowserTabEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserTabEmptyStateView.swift; sourceTree = "<group>"; };
+		AA8734A427A9B06300581F13 /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
+		AA8734A527A9B06300581F13 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		AA8734A627A9B06300581F13 /* URLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
+		AA8734B327A9B1FF00581F13 /* NSNotification+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotification+Helpers.swift"; sourceTree = "<group>"; };
+		AA8734B427A9B1FF00581F13 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		AA8734B527A9B1FF00581F13 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		AA8734BC27A9B3F800581F13 /* HomeContiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContiner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8734BB27A9B2E900581F13 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +103,9 @@
 		686B43E727A5AA57003FFB4F /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				AA8734AA27A9B07500581F13 /* Extensions */,
+				AA8734A327A9B05900581F13 /* Helpers */,
+				AA87348527A9AEE500581F13 /* UIKit */,
 				686B43FC27A5AB00003FFB4F /* Model */,
 				686B43FB27A5AAEF003FFB4F /* View */,
 				686B43E827A5AA57003FFB4F /* WebApp.swift */,
@@ -86,6 +131,7 @@
 			children = (
 				686B43FD27A5AB30003FFB4F /* Home.swift */,
 				68E24CD227A7C05C00DFCAE2 /* WebView.swift */,
+				AA8734BC27A9B3F800581F13 /* HomeContiner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +142,70 @@
 				686B43FF27A5B60F003FFB4F /* Tab.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AA87348527A9AEE500581F13 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AA87349A27A9AFFD00581F13 /* Tab */,
+				AA87349327A9AFBE00581F13 /* Toolbar */,
+				AA87348627A9AF9700581F13 /* BrowserContainer */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		AA87348627A9AF9700581F13 /* BrowserContainer */ = {
+			isa = PBXGroup;
+			children = (
+				AA87348927A9AFBA00581F13 /* BrowserContainerContentView.swift */,
+				AA87348A27A9AFBA00581F13 /* BrowserContainerViewController.swift */,
+				AA87348B27A9AFBA00581F13 /* BrowserContainerViewController+AddressBarsAnimation.swift */,
+				AA87348C27A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift */,
+				AA87348727A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift */,
+				AA87348827A9AFBA00581F13 /* BrowserContainerViewModel.swift */,
+			);
+			path = BrowserContainer;
+			sourceTree = "<group>";
+		};
+		AA87349327A9AFBE00581F13 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				AA87349527A9AFD300581F13 /* BrowserAddressBar.swift */,
+				AA87349627A9AFD300581F13 /* BrowserAddressBar+TextField.swift */,
+				AA87349427A9AFD300581F13 /* BrowserToolbar.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		AA87349A27A9AFFD00581F13 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				AA87349C27A9B00600581F13 /* BrowserTabContentView.swift */,
+				AA87349B27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift */,
+				AA87349E27A9B00600581F13 /* BrowserTabEmptyStateView.swift */,
+				AA87349D27A9B00600581F13 /* BrowserTabViewController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		AA8734A327A9B05900581F13 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA8734A527A9B06300581F13 /* KeyboardManager.swift */,
+				AA8734A427A9B06300581F13 /* URLGenerator.swift */,
+				AA8734A627A9B06300581F13 /* URLValidator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AA8734AA27A9B07500581F13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA8734B527A9B1FF00581F13 /* Array+Helpers.swift */,
+				AA8734B327A9B1FF00581F13 /* NSNotification+Helpers.swift */,
+				AA8734B427A9B1FF00581F13 /* UIColor+Helpers.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +224,9 @@
 			dependencies = (
 			);
 			name = Web;
+			packageProductDependencies = (
+				AA8734BA27A9B2E900581F13 /* SnapKit */,
+			);
 			productName = Web;
 			productReference = 686B43E527A5AA57003FFB4F /* Web.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 686B43DC27A5AA57003FFB4F;
+			packageReferences = (
+				AA8734B927A9B2E900581F13 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 686B43E627A5AA57003FFB4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,12 +285,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				686B43F227A5AA59003FFB4F /* Persistence.swift in Sources */,
+				AA8734B827A9B1FF00581F13 /* Array+Helpers.swift in Sources */,
 				686B43EB27A5AA57003FFB4F /* ContentView.swift in Sources */,
 				686B43FE27A5AB30003FFB4F /* Home.swift in Sources */,
+				AA87349127A9AFBA00581F13 /* BrowserContainerViewController+AddressBarsAnimation.swift in Sources */,
+				AA87348F27A9AFBA00581F13 /* BrowserContainerContentView.swift in Sources */,
 				686B440027A5B60F003FFB4F /* Tab.swift in Sources */,
+				AA8734B727A9B1FF00581F13 /* UIColor+Helpers.swift in Sources */,
+				AA87349027A9AFBA00581F13 /* BrowserContainerViewController.swift in Sources */,
+				AA87348D27A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift in Sources */,
+				AA87349227A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift in Sources */,
+				AA87349F27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift in Sources */,
 				686B43F527A5AA59003FFB4F /* Web.xcdatamodeld in Sources */,
+				AA8734A227A9B00600581F13 /* BrowserTabEmptyStateView.swift in Sources */,
+				AA87349827A9AFD300581F13 /* BrowserAddressBar.swift in Sources */,
+				AA8734BD27A9B3F800581F13 /* HomeContiner.swift in Sources */,
 				686B43E927A5AA57003FFB4F /* WebApp.swift in Sources */,
+				AA8734A927A9B06300581F13 /* URLValidator.swift in Sources */,
+				AA87348E27A9AFBA00581F13 /* BrowserContainerViewModel.swift in Sources */,
+				AA87349927A9AFD300581F13 /* BrowserAddressBar+TextField.swift in Sources */,
+				AA87349727A9AFD300581F13 /* BrowserToolbar.swift in Sources */,
 				68E24CD327A7C05C00DFCAE2 /* WebView.swift in Sources */,
+				AA8734A827A9B06300581F13 /* KeyboardManager.swift in Sources */,
+				AA8734A127A9B00600581F13 /* BrowserTabViewController.swift in Sources */,
+				AA8734B627A9B1FF00581F13 /* NSNotification+Helpers.swift in Sources */,
+				AA8734A727A9B06300581F13 /* URLGenerator.swift in Sources */,
+				AA8734A027A9B00600581F13 /* BrowserTabContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +511,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA8734B927A9B2E900581F13 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA8734BA27A9B2E900581F13 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA8734B927A9B2E900581F13 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		686B43F327A5AA59003FFB4F /* Web.xcdatamodeld */ = {
