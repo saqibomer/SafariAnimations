@@ -103,8 +103,6 @@ struct Home: View {
                 .background(
                     scheme == .dark ? Color.black : Color.white
                 )
-            }.onAppear {
-                print(tabs.first?.tabURL)
             }
             
         }

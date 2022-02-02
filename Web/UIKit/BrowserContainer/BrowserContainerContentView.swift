@@ -22,7 +22,7 @@ class BrowserContainerContentView: UIView {
   var toolbarBottomConstraint: Constraint?
   
   // Address bar animation constants
-  let tabsStackViewSpacing = CGFloat(150)
+  let tabsStackViewSpacing = CGFloat(24)
   let addressBarWidthOffset = CGFloat(-48)
   let addressBarContainerHidingWidthOffset = CGFloat(-200)
   let addressBarsStackViewSidePadding = CGFloat(24)
