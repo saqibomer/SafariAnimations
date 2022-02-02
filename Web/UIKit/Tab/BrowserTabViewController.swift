@@ -40,7 +40,8 @@ class BrowserTabViewController: UIViewController {
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     switch keyPath {
     case #keyPath(WKWebView.url):
-      delegate?.tabViewController(self, didStartLoadingURL: contentView.webView.url!)
+        guard let url = contentView.webView.url else {return}
+      delegate?.tabViewController(self, didStartLoadingURL: url)
     case #keyPath(WKWebView.estimatedProgress):
       delegate?.tabViewController(self, didChangeLoadingProgressTo: Float(contentView.webView.estimatedProgress))
     case #keyPath(WKWebView.themeColor):
