@@ -73,6 +73,7 @@ class BrowserContainerViewController: UIViewController {
         setupAddressBarsExpandingOnTap()
         setupAddressBarSwipeUp()
         setupKeyboardManager()
+//        setupPanGesture()
         openNewTab(isHidden: false)
     }
     
@@ -154,9 +155,15 @@ private extension BrowserContainerViewController {
     }
     
     func setupAddressBarSwipeUp() {
-        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeUpGestureRecogniser))
-        swipeUpGesture.direction = .up
-        contentView.addressBarsScrollView.addGestureRecognizer(swipeUpGesture)
+//        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeUpGestureRecogniser))
+//        swipeUpGesture.direction = .up
+//        contentView.addressBarsScrollView.addGestureRecognizer(swipeUpGesture)
+    }
+    
+    func setupPanGesture() {
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+        panGestureRecognizer.maximumNumberOfTouches = 1
+        contentView.addressBarsScrollView.addGestureRecognizer(panGestureRecognizer)
     }
 }
 
@@ -185,6 +192,42 @@ extension BrowserContainerViewController {
         self.present(viewCtrl, animated: true, completion: nil)
         
           
+    }
+    
+    @objc private func didPan(_ gestureRecognizer: UIPanGestureRecognizer) {
+        switch gestureRecognizer.state {
+        case .began:
+            print("Started")
+        case .changed:
+            
+            if gestureRecognizer.direction == .up{
+                print("Swiping up")
+                 UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseInOut]) {
+                     
+                     self.contentView.tabsStackView.spacing = self.contentView.tabsStackView.spacing + 50
+
+                 }
+            }
+            
+            if gestureRecognizer.direction == .down {
+                print("Swiping down")
+                 UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseInOut]) {
+                     
+                     self.contentView.tabsStackView.spacing = self.contentView.tabsStackView.spacing - 50
+
+                 }
+            }
+            
+            
+
+            
+        case .ended,
+             .cancelled:
+            print("Ended")
+            
+        default:
+            break
+        }
     }
 }
 

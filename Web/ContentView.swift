@@ -21,6 +21,7 @@ struct ContentView: View {
     var body: some View {
         
         HomeContiner(tabs: $tabs)
+            .ignoresSafeArea()
         
 //        NavigationView {
 //            List {
