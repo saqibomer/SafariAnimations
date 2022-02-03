@@ -17,6 +17,10 @@
 		686B440027A5B60F003FFB4F /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B43FF27A5B60F003FFB4F /* Tab.swift */; };
 		68E24CD327A7C05C00DFCAE2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E24CD227A7C05C00DFCAE2 /* WebView.swift */; };
 		AA1EA1A327AABCF1007D2938 /* UIPanGestureRecognizer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EA1A227AABCF1007D2938 /* UIPanGestureRecognizer+Extensions.swift */; };
+		AA24050E27AB58C6009126E6 /* SwipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AA24050A27AB58C5009126E6 /* SwipeUp.png */; };
+		AA24050F27AB58C6009126E6 /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AA24050B27AB58C6009126E6 /* demo.mp4 */; };
+		AA24051027AB58C6009126E6 /* Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AA24050C27AB58C6009126E6 /* Normal.png */; };
+		AA24051127AB58C6009126E6 /* SwipeRight.png in Resources */ = {isa = PBXBuildFile; fileRef = AA24050D27AB58C6009126E6 /* SwipeRight.png */; };
 		AA87348D27A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348727A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift */; };
 		AA87348E27A9AFBA00581F13 /* BrowserContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348827A9AFBA00581F13 /* BrowserContainerViewModel.swift */; };
 		AA87348F27A9AFBA00581F13 /* BrowserContainerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87348927A9AFBA00581F13 /* BrowserContainerContentView.swift */; };
@@ -53,6 +57,10 @@
 		686B43FF27A5B60F003FFB4F /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		68E24CD227A7C05C00DFCAE2 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AA1EA1A227AABCF1007D2938 /* UIPanGestureRecognizer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPanGestureRecognizer+Extensions.swift"; sourceTree = "<group>"; };
+		AA24050A27AB58C5009126E6 /* SwipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwipeUp.png; sourceTree = "<group>"; };
+		AA24050B27AB58C6009126E6 /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
+		AA24050C27AB58C6009126E6 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Normal.png; sourceTree = "<group>"; };
+		AA24050D27AB58C6009126E6 /* SwipeRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwipeRight.png; sourceTree = "<group>"; };
 		AA87348727A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserContainerViewController+ToolbarAnimation.swift"; sourceTree = "<group>"; };
 		AA87348827A9AFBA00581F13 /* BrowserContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserContainerViewModel.swift; sourceTree = "<group>"; };
 		AA87348927A9AFBA00581F13 /* BrowserContainerContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserContainerContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 		686B43E727A5AA57003FFB4F /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				AA24050927AB587B009126E6 /* Demo */,
 				AA8734AA27A9B07500581F13 /* Extensions */,
 				AA8734A327A9B05900581F13 /* Helpers */,
 				AA87348527A9AEE500581F13 /* UIKit */,
@@ -146,6 +155,17 @@
 				686B43FF27A5B60F003FFB4F /* Tab.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AA24050927AB587B009126E6 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				AA24050B27AB58C6009126E6 /* demo.mp4 */,
+				AA24050C27AB58C6009126E6 /* Normal.png */,
+				AA24050D27AB58C6009126E6 /* SwipeRight.png */,
+				AA24050A27AB58C5009126E6 /* SwipeUp.png */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		AA87348527A9AEE500581F13 /* UIKit */ = {
@@ -278,8 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA24051027AB58C6009126E6 /* Normal.png in Resources */,
+				AA24050F27AB58C6009126E6 /* demo.mp4 in Resources */,
+				AA24050E27AB58C6009126E6 /* SwipeUp.png in Resources */,
 				686B43F027A5AA59003FFB4F /* Preview Assets.xcassets in Resources */,
 				686B43ED27A5AA59003FFB4F /* Assets.xcassets in Resources */,
+				AA24051127AB58C6009126E6 /* SwipeRight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
