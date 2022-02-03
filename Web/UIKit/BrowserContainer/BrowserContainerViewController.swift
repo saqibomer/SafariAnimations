@@ -71,7 +71,6 @@ class BrowserContainerViewController: UIViewController {
         setupCancelButton()
         setupAddressBarsScrollView()
         setupAddressBarsExpandingOnTap()
-        setupAddressBarSwipeUp()
         setupKeyboardManager()
         setupPanGesture()
         openNewTab(isHidden: false)
@@ -154,12 +153,6 @@ private extension BrowserContainerViewController {
         contentView.addressBarsScrollView.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    func setupAddressBarSwipeUp() {
-//        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeUpGestureRecogniser))
-//        swipeUpGesture.direction = .up
-//        contentView.addressBarsScrollView.addGestureRecognizer(swipeUpGesture)
-    }
-    
     func setupPanGesture() {
         let panGestureRecognizer = PanDirectionGestureRecognizer(direction: .vertical, target: self, action: #selector(didPan(_:)))
         panGestureRecognizer.delegate = self
@@ -194,20 +187,6 @@ extension BrowserContainerViewController {
         isCollapsed = false
     }
     
-    @objc func swipeUpGestureRecogniser() {
-        var homeView = Home(tabs: self.viewModel.tabs)
-        homeView.onAddNewTab = { [weak self] hidden in
-            self?.openNewTab(isHidden: hidden)
-            self?.scrollToLast()
-        }
-        
-        let viewCtrl = UIHostingController(rootView: homeView)
-        viewCtrl.modalPresentationStyle = .fullScreen
-        self.present(viewCtrl, animated: true, completion: nil)
-        
-          
-    }
-    
     @objc private func didPan(_ gestureRecognizer: UIPanGestureRecognizer) {
         switch gestureRecognizer.state {
         case .began:
@@ -237,15 +216,10 @@ extension BrowserContainerViewController {
             if isVerticalPan {
                 self.animateView()
             }
-            
-            
-            
-            
-
-            
+        
         case .ended:
             if dragValue == 0.5 {
-                var homeView = Home(tabs: self.viewModel.tabs)
+                var homeView = OpenedTabsView(tabs: self.viewModel.tabs)
                 homeView.onAddNewTab = { [weak self] hidden in
                     self?.openNewTab(isHidden: hidden)
                     self?.scrollToLast()
