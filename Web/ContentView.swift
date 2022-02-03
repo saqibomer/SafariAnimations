@@ -17,6 +17,7 @@ struct ContentView: View {
 //    private var items: FetchedResults<Item>
     
     @State var tabs : [Tab] = []
+    @State private var showContainer = true
 
     var body: some View {
         

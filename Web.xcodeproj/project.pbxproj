@@ -38,6 +38,7 @@
 		AA8734B827A9B1FF00581F13 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734B527A9B1FF00581F13 /* Array+Helpers.swift */; };
 		AA8734BB27A9B2E900581F13 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA8734BA27A9B2E900581F13 /* SnapKit */; };
 		AA8734BD27A9B3F800581F13 /* HomeContiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8734BC27A9B3F800581F13 /* HomeContiner.swift */; };
+		AAB2F6AC27AB1F35001D2F62 /* Pangesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB2F6AB27AB1F35001D2F62 /* Pangesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		AA8734B427A9B1FF00581F13 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		AA8734B527A9B1FF00581F13 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
 		AA8734BC27A9B3F800581F13 /* HomeContiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContiner.swift; sourceTree = "<group>"; };
+		AAB2F6AB27AB1F35001D2F62 /* Pangesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pangesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				AA8734A527A9B06300581F13 /* KeyboardManager.swift */,
 				AA8734A427A9B06300581F13 /* URLGenerator.swift */,
 				AA8734A627A9B06300581F13 /* URLValidator.swift */,
+				AAB2F6AB27AB1F35001D2F62 /* Pangesture.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				AA87349027A9AFBA00581F13 /* BrowserContainerViewController.swift in Sources */,
 				AA87348D27A9AFBA00581F13 /* BrowserContainerViewController+ToolbarAnimation.swift in Sources */,
 				AA87349227A9AFBA00581F13 /* BrowserContainerViewController+Keyboard.swift in Sources */,
+				AAB2F6AC27AB1F35001D2F62 /* Pangesture.swift in Sources */,
 				AA87349F27A9B00600581F13 /* BrowserTabContentView+StatusBarBackgroundView.swift in Sources */,
 				686B43F527A5AA59003FFB4F /* Web.xcdatamodeld in Sources */,
 				AA8734A227A9B00600581F13 /* BrowserTabEmptyStateView.swift in Sources */,

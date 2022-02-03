@@ -13,14 +13,13 @@ struct HomeContiner: UIViewControllerRepresentable {
     @Binding var tabs: [Tab]
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        uiViewController.viewDidLoad()
+        
     }
     
 
     func makeUIViewController(context: Context) -> UIViewController {
-        let vc = BrowserContainerViewController(tabs: $tabs)
         
 
-        return vc
+        return BrowserContainerViewController(tabs: $tabs)
     }
 }

@@ -14,8 +14,8 @@ class BrowserContainerViewController: UIViewController {
     let contentView = BrowserContainerContentView()
     var tabViewControllers = [BrowserTabViewController]()
     let viewModel: BrowserContainerViewModel
-    
-    
+    var isVerticalPan = false
+    var dragValue = 1.0
     @Binding var tabs: [Tab]
     
     
@@ -73,7 +73,7 @@ class BrowserContainerViewController: UIViewController {
         setupAddressBarsExpandingOnTap()
         setupAddressBarSwipeUp()
         setupKeyboardManager()
-//        setupPanGesture()
+        setupPanGesture()
         openNewTab(isHidden: false)
     }
     
@@ -161,9 +161,23 @@ private extension BrowserContainerViewController {
     }
     
     func setupPanGesture() {
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
-        panGestureRecognizer.maximumNumberOfTouches = 1
-        contentView.addressBarsScrollView.addGestureRecognizer(panGestureRecognizer)
+        let panGestureRecognizer = PanDirectionGestureRecognizer(direction: .vertical, target: self, action: #selector(didPan(_:)))
+        panGestureRecognizer.delegate = self
+        panGestureRecognizer.cancelsTouchesInView = false
+        contentView.addressBarsStackView.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    func animateView() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseInOut]) {
+            
+            self.contentView.tabsScrollView.transform = CGAffineTransform(scaleX: self.dragValue, y: self.dragValue)
+            
+            for controller in self.tabViewControllers {
+                controller.view.clipsToBounds = true
+                
+            }
+
+        }
     }
 }
 
@@ -198,37 +212,66 @@ extension BrowserContainerViewController {
         switch gestureRecognizer.state {
         case .began:
             print("Started")
+            
         case .changed:
             
-            if gestureRecognizer.direction == .up{
-                print("Swiping up")
-                 UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseInOut]) {
-                     
-                     self.contentView.tabsStackView.spacing = self.contentView.tabsStackView.spacing + 50
-
-                 }
+            let trnslation = gestureRecognizer.translation(in: gestureRecognizer.view)
+            let fraction = trnslation.y / view.bounds.height
+            
+            
+            
+            dragValue =  1 - (fraction * (-1))
+            
+            if dragValue > 1 {
+                dragValue = 1
+                for controller in self.tabViewControllers {
+                    controller.view.clipsToBounds = false
+                    
+                }
             }
             
-            if gestureRecognizer.direction == .down {
-                print("Swiping down")
-                 UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveEaseInOut]) {
-                     
-                     self.contentView.tabsStackView.spacing = self.contentView.tabsStackView.spacing - 50
-
-                 }
+            if dragValue <= 0.5 {
+                dragValue = 0.5
+            }
+                
+            if isVerticalPan {
+                self.animateView()
             }
             
             
+            
+            
 
             
-        case .ended,
-             .cancelled:
+        case .ended:
+            if dragValue == 0.5 {
+                var homeView = Home(tabs: self.viewModel.tabs)
+                homeView.onAddNewTab = { [weak self] hidden in
+                    self?.openNewTab(isHidden: hidden)
+                    self?.scrollToLast()
+                }
+                
+                let viewCtrl = UIHostingController(rootView: homeView)
+                viewCtrl.modalPresentationStyle = .fullScreen
+                self.present(viewCtrl, animated: true) {
+                    self.dragValue = 1.0
+                    self.animateView()
+                }
+            } else {
+                dragValue = 1.0
+                self.animateView()
+                
+            }
+            print("Ended")
+            case .cancelled:
             print("Ended")
             
         default:
             break
         }
     }
+    
+    
 }
 
 // MARK: BrowserAddressBarDelegate
@@ -256,5 +299,16 @@ extension BrowserContainerViewController: BrowserAddressBarDelegate {
             
         }
         dismissKeyboard()
+    }
+}
+
+extension BrowserContainerViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard let gesture = gestureRecognizer as? UIPanGestureRecognizer else { return false }
+        
+        let translation = gesture.translation(in: self.view)
+        self.isVerticalPan = abs(translation.y) > abs(translation.x); // BOOL property
+
+        return self.isVerticalPan
     }
 }
